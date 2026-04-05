@@ -1,3 +1,19 @@
 .green {
     color: green;
 }
+
+.foo {
+    display: none;
+}
+
+.anotherclass {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+#box {
+    /*display: none;*/
+}

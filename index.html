@@ -26,6 +26,29 @@
         <li id="super-important">Zaimplementować</li>
     </ol>
 </div>
+
+<p>1. Pojawiający się tekst:</p>
+<div id="myScript" class="foo">
+    <p>Po zmianie klasy pojawia się ten tekst</p>
+</div>
+
+<button onclick="changeClass()">Zmień klasę</button>
+
+<p>2. Pojawiający się tekst:</p>
+<div id="box" class="hidden">
+    <p>Po usunięciu klasy pojawia się ten tekst</p>
+</div>
+
+<button onclick="toggleVisibility()">Pokaż / Ukryj</button>
+
+<p>3. Pojawiający się tekst:</p>
+<div id="box2">Widoczny tylko gdy i < 10</div>
+
+<button onclick="check()">Sprawdź</button>
+
+<p>4. Obsługa funkcji gdy najedziesz myszką:</p>
+<button onmouseover="przyslonKlawisz()">Najedź na mnie</button>
+
 <script>
     alert('Witamy witamy');
 
@@ -53,6 +76,44 @@
 
     // 3. Usuwanie elementów
     document.querySelectorAll("#app .boring").forEach((e) => e.remove());
+
+    // 4. Zarządzanie klasami CSS elementu
+
+    // 4.1. Po zmianie klasy pojawia się tekst
+    function changeClass() {
+        const div = document.getElementById("myScript");
+
+        div.classList.remove("foo");
+        div.classList.add("anotherclass");
+    }
+
+    // 4.2. jeśli ustawiona jest widoczność usuwa ją, w przeciwnym wypadku dodaje
+    function toggleVisibility() {
+        const div = document.getElementById("box");
+        div.classList.toggle("hidden");
+    }
+
+    // 4.3. dodaj/usuń (add/remove) jest widoczne, w zależności od warunku testowego, i mniejsze od 10
+    let i = 5;
+
+    function check() {
+        const div = document.getElementById("box2");
+
+        div.classList.toggle("hidden", !(i < 10));
+        i++;
+    }
+
+    // 4.4. sprawdza czy klasa istnieje
+    alert('Czy klasa foo istnieje? ' + div.classList.contains("foo"));
+
+    function przyslonKlawisz() {
+        alert("Najechałeś na przycisk!");
+    }
+
+
+
+
+
 
 </script>
 </body>

@@ -54,8 +54,11 @@
 <input type="checkbox" id="myCheckbox">
 <button type="button" onclick="readValues()">Odczytaj wartości</button>
 
-<p>6. wykonuje funkcję z podanym opóźnieniem:</p>
+<p>6. Wykonuje funkcję z podanym opóźnieniem:</p>
 <button onclick="startTimer()">Opóźnienie</button>
+
+<p>7. Anuluje wykonanie funkcji z podanym opóźnieniem:</p>
+<button onclick="stopTimer()">Stop</button>
 
 <script>
     alert('Witamy witamy');
@@ -130,8 +133,18 @@
 
     // 6. Opóźnienie wykonania funkcji
     // wykonuje funkcję z podanym opóźnieniem (tutaj: 1500ms)
+    let timeoutId;
+
     function startTimer() {
-        setTimeout(() => console.log('Zaraz'), 1500);
+        timeoutId = setTimeout(() => {
+            console.log('Zaraz');
+            alert('Zaraz');
+        }, 1500);
+    }
+
+    // 7. Anulowanie wykonania opóźnionej funkcji
+    function stopTimer() {
+        clearTimeout(timeoutId);
     }
 
 </script>

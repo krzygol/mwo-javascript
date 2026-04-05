@@ -17,3 +17,12 @@
 #box {
     /*display: none;*/
 }
+
+
+#gameArea.active {
+    background: green;
+}
+
+#gameArea.waiting {
+    background: gray;
+}

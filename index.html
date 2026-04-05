@@ -49,6 +49,11 @@
 <p>4. Obsługa funkcji gdy najedziesz myszką:</p>
 <button onmouseover="przyslonKlawisz()">Najedź na mnie</button>
 
+<p>4. Interfejs użytkownika:</p>
+<input type="text" id="myTextField">
+<input type="checkbox" id="myCheckbox">
+<button type="button" onclick="readValues()">Odczytaj wartości</button>
+
 <script>
     alert('Witamy witamy');
 
@@ -110,7 +115,15 @@
         alert("Najechałeś na przycisk!");
     }
 
+    // 5. Interfejs użytkownika
+    function readValues() {
+        const textField = document.getElementById("myTextField");
+        const checkbox = document.getElementById("myCheckbox");
 
+        if (checkbox.checked) {
+            alert(textField.value);
+        }
+    }
 
 
 

@@ -49,10 +49,13 @@
 <p>4. Obsługa funkcji gdy najedziesz myszką:</p>
 <button onmouseover="przyslonKlawisz()">Najedź na mnie</button>
 
-<p>4. Interfejs użytkownika:</p>
+<p>5. Interfejs użytkownika:</p>
 <input type="text" id="myTextField">
 <input type="checkbox" id="myCheckbox">
 <button type="button" onclick="readValues()">Odczytaj wartości</button>
+
+<p>6. wykonuje funkcję z podanym opóźnieniem:</p>
+<button onclick="startTimer()">Opóźnienie</button>
 
 <script>
     alert('Witamy witamy');
@@ -125,8 +128,11 @@
         }
     }
 
-
-
+    // 6. Opóźnienie wykonania funkcji
+    // wykonuje funkcję z podanym opóźnieniem (tutaj: 1500ms)
+    function startTimer() {
+        setTimeout(() => console.log('Zaraz'), 1500);
+    }
 
 </script>
 </body>

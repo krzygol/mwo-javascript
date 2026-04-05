@@ -60,6 +60,10 @@
 <p>7. Anuluje wykonanie funkcji z podanym opóźnieniem:</p>
 <button onclick="stopTimer()">Stop</button>
 
+<p>8. Cykliczne wykonywanie kodu:</p>
+<button onclick="start2()">Start</button>
+<button onclick="stop2()">Stop</button>
+
 <script>
     alert('Witamy witamy');
 
@@ -145,6 +149,20 @@
     // 7. Anulowanie wykonania opóźnionej funkcji
     function stopTimer() {
         clearTimeout(timeoutId);
+    }
+
+    // 8. Cykliczne wykonywanie kodu
+    let intervalId;
+
+    function start2() {
+        intervalId = setInterval(() => {
+            console.log('Znowu');
+        }, 1500);
+    }
+
+    function stop2() {
+        clearInterval(intervalId);
+        alert('Stop');
     }
 
 </script>

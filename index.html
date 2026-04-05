@@ -29,16 +29,16 @@
 <script>
     alert('Witamy witamy');
 
-    // 1. Odnajdywanie elementów
-    // szukanie po identyfikatorze
-    const header = document.getElementById('main-header');
-    alert(header.innerText);
-    // szukanie po selektorach (tak jak w CSS)
-    const nudy = document.querySelectorAll("#app .boring");
-    nudy.forEach(element => {
-        alert(`Nuda: ${element.innerText}`);
-        element.classList.remove('boring');
-    });
+    // // 1. Odnajdywanie elementów
+    // // szukanie po identyfikatorze
+    // const header = document.getElementById('main-header');
+    // alert(header.innerText);
+    // // szukanie po selektorach (tak jak w CSS)
+    // const nudy = document.querySelectorAll("#app .boring");
+    // nudy.forEach(element => {
+    //     alert(`Nuda: ${element.innerText}`);
+    //     element.classList.remove('boring');
+    // });
 
     // 2. Tworzenie nowych elementów
     let div = document.createElement('div');
@@ -50,6 +50,9 @@
     listItem.innerText = 'Zagrać';
     // dodaję na koniec listy
     document.querySelector("#app ol li:last-child").after(listItem); // jest też before
+
+    // 3. Usuwanie elementów
+    document.querySelectorAll("#app .boring").forEach((e) => e.remove());
 
 </script>
 </body>

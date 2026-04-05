@@ -13,6 +13,7 @@
             color: #0B3954;
         }
     </style>
+    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
 <div id="app">
@@ -38,7 +39,18 @@
         alert(`Nuda: ${element.innerText}`);
         element.classList.remove('boring');
     });
-    
+
+    // 2. Tworzenie nowych elementów
+    let div = document.createElement('div');
+    div.classList.add('green');
+    div.innerText = 'Zielony tekst (jeśli dodasz CSS)';
+    document.getElementById('app').append(div); // jest też prepend
+
+    let listItem = document.createElement('li');
+    listItem.innerText = 'Zagrać';
+    // dodaję na koniec listy
+    document.querySelector("#app ol li:last-child").after(listItem); // jest też before
+
 </script>
 </body>
 </html>

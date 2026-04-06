@@ -18,6 +18,17 @@
     /*display: none;*/
 }
 
+.underlined {
+    text-decoration: underline;
+}
+
+
+#area {
+    width: 400px;
+    height: 250px;
+    background: gray;
+    margin-top: 20px;
+}
 
 #gameArea.active {
     background: green;

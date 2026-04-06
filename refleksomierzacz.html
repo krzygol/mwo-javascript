@@ -7,10 +7,13 @@
 </head>
 <body>
 
-<button onclick="startGame()">Start</button>
-<button onclick="stopGame()">Stop</button>
+<label>Liczba prób: </label>
+<input type="number" id="tries" value="5" min="1" max="20">
 
-<div id="area" style="width:300px;height:200px;background:gray;margin-top:20px;">
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+
+<div id="area">
     Kliknij jak się zmieni na zielone
 </div>
 
@@ -22,25 +25,28 @@
     let waiting = false;
     let results = [];
     let count = 0;
+    let maxTries = 5;
 
-    function startGame() {
+    function start() {
         results = [];
         count = 0;
+        maxTries = parseInt(document.getElementById("tries").value);
+        document.getElementById("result").textContent = "";
         next();
     }
 
-    function stopGame() {
+    function stop() {
         clearTimeout(timeoutId);
         waiting = false;
     }
 
     function next() {
-        if (count >= 5) {
-            showStats();
+        if (count >= maxTries) {
+            showResults();
             return;
         }
 
-        const delay = Math.random() * 3000 + 1000;
+        const delay = Math.random() * 3000 + 1000;    // min delay: 1s, max delay: 4s
 
         timeoutId = setTimeout(() => {
             document.getElementById("area").style.background = "green";
@@ -63,13 +69,13 @@
         next();
     };
 
-    function showStats() {
+    function showResults() {
         const min = Math.min(...results);
         const max = Math.max(...results);
         const avg = results.reduce((a, b) => a + b, 0) / results.length;
 
         document.getElementById("result").textContent =
-            "Min: " + min + " ms | Max: " + max + " ms | Avg: " + Math.round(avg) + " ms";
+            "Min: " + min + " ms | Max: " + max + " ms | Średnia: " + Math.round(avg) + " ms";
     }
 </script>
 

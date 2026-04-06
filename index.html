@@ -15,6 +15,7 @@
     </style>
     <link rel="stylesheet" href="layout.css">
 </head>
+
 <body>
 <div id="app">
     <h1 id="main-header">Moja aplikacja</h1>
@@ -27,44 +28,51 @@
     </ol>
 </div>
 
-<p>1. Pojawiający się tekst:</p>
-<div id="myScript" class="foo">
+<p class="underlined">1. Pojawiający się tekst:</p>
+<div id="changeClass" class="foo">
     <p>Po zmianie klasy pojawia się ten tekst</p>
 </div>
-
 <button onclick="changeClass()">Zmień klasę</button>
 
-<p>2. Pojawiający się tekst:</p>
-<div id="box" class="hidden">
-    <p>Po usunięciu klasy pojawia się ten tekst</p>
-</div>
 
+<p class="underlined">2. Pojawiający się tekst:</p>
+<div id="box" class="hidden">
+    <p>Po usunięciu klasy pojawia się ten tekst / przywrócenie klasy usuwa tekst</p>
+</div>
 <button onclick="toggleVisibility()">Pokaż / Ukryj</button>
 
-<p>3. Pojawiający się tekst:</p>
-<div id="box2">Widoczny tylko gdy i < 10</div>
 
+<p class="underlined">3. Pojawiający się tekst:</p>
+<div id="box2">
+    <p>Widoczny tylko gdy i < 10</p>
+</div>
 <button onclick="check()">Sprawdź</button>
 
-<p>4. Obsługa funkcji gdy najedziesz myszką:</p>
+
+<p class="underlined">4. Obsługa funkcji gdy najedziesz myszką:</p>
 <button onmouseover="przyslonKlawisz()">Najedź na mnie</button>
 
-<p>5. Interfejs użytkownika:</p>
+
+<p class="underlined">5. Interfejs użytkownika:</p>
 <input type="text" id="myTextField">
 <input type="checkbox" id="myCheckbox">
 <button type="button" onclick="readValues()">Odczytaj wartości</button>
 
-<p>6. Wykonuje funkcję z podanym opóźnieniem:</p>
+
+<p class="underlined">6. Wykonuje funkcję z podanym opóźnieniem:</p>
 <button onclick="startTimer()">Opóźnienie</button>
 
-<p>7. Anuluje wykonanie funkcji z podanym opóźnieniem:</p>
+
+<p class="underlined">7. Anuluje wykonanie funkcji z podanym opóźnieniem:</p>
 <button onclick="stopTimer()">Stop</button>
 
-<p>8. Cykliczne wykonywanie kodu:</p>
+
+<p class="underlined">8. Cykliczne wykonywanie kodu:</p>
 <button onclick="start2()">Start</button>
 <button onclick="stop2()">Stop</button>
 
-<p>Refleksomierzacz:</p>
+
+<p class="underlined">Refleksomierzacz:</p>
 <a href="refleksomierzacz.html">Refleksomierzacz</a>
 
 <script>
@@ -99,7 +107,7 @@
 
     // 4.1. Po zmianie klasy pojawia się tekst
     function changeClass() {
-        const div = document.getElementById("myScript");
+        const div = document.getElementById("changeClass");
 
         div.classList.remove("foo");
         div.classList.add("anotherclass");

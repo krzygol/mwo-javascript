@@ -29,11 +29,3 @@
     background: gray;
     margin-top: 20px;
 }
-
-#gameArea.active {
-    background: green;
-}
-
-#gameArea.waiting {
-    background: gray;
-}
